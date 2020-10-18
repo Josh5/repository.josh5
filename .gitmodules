@@ -1,0 +1,3 @@
+[submodule "source/service.mergerfs"]
+	path = source/service.mergerfs
+	url = git@github.com:Josh5/kodi.service.mergerfs.git
