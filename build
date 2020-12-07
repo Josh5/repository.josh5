@@ -94,6 +94,7 @@ git submodule foreach git pull
 cd ./source
 echo "Generating Repo..."
 echo
+find ./ -type f -name "build.sh" -exec {} \;
 python ./addons_xml_generator.py
 python ./generate_repository.py
 cd ..
