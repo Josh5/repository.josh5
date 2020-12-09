@@ -82,11 +82,10 @@ MerferFS service for merging all mounts under /var/media/* into a single mountpo
 
 <addon id="docker.josh5.unmanic"
        name="Unmanic (docker)"
-       version="1.0.0"
+       version="1.0.1~beta1"
        provider-name="Josh.5">
   <requires>
     <import addon="service.system.docker" version="0.0.0" />
-    <import addon="docker.linuxserver.updater" version="0.0.0"/>
   </requires>
   <extension point="xbmc.service" library="default.py">
     <provides></provides>
