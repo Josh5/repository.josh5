@@ -4,6 +4,3 @@
 [submodule "source/docker.josh5.unmanic"]
 	path = source/docker.josh5.unmanic
 	url = git@github.com:Josh5/docker.josh5.unmanic.git
-[submodule "source/service.unmanic"]
-	path = source/service.unmanic
-	url = git@github.com:Josh5/service.unmanic.git
