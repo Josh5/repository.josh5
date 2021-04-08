@@ -89,12 +89,13 @@ fi
 
 
 echo "Updating submodules..."
-git submodule foreach git pull
+git submodule update --init --recursive
+git submodule update --recursive --remote
 
 cd ./source
 echo "Generating Repo..."
 echo
-find ./ -type f -name "build.sh" -exec {} \;
-python ./addons_xml_generator.py
-python ./generate_repository.py
+find ./ -type f -name "build.sh" -exec bash -c 'cd $(dirname {}) && ./build.sh' \;
+python3 ./addons_xml_generator.py
+python3 ./generate_repository.py
 cd ..

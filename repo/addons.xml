@@ -2,7 +2,7 @@
 <addons>
 <addon id="service.unmanic"
        name="Unmanic"
-       version="0.0.1~beta1"
+       version="0.0.4"
        provider-name="Josh.5">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
@@ -35,11 +35,11 @@ Unmanic provides you with the following main functions:
 service.unmanic:
 --------------------------
 
-View changelog on https://github.com/Josh5/unmanic/
+View changelog on https://github.com/Unmanic/unmanic/
 
     </news>
     <platform>linux</platform>
-    <website>https://github.com/Josh5/unmanic/</website>
+    <website>https://github.com/Unmanic/unmanic/</website>
     <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
@@ -78,6 +78,19 @@ MerferFS service for merging all mounts under /var/media/* into a single mountpo
 
     </assets>
   </extension>
+</addon>
+
+<addon id="repository.josh5" name="Josh.5" version="1.0.0" provider-name="Josh.5">
+    <extension point="xbmc.addon.repository" name="Josh.5">
+        <info compressed="false">https://raw.githubusercontent.com/Josh5/repository.josh5/master/repo/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/Josh5/repository.josh5/master/repo/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/Josh5/repository.josh5/master/repo</datadir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Josh.5 add-on repository</summary>
+        <description>Download and install addons by Josh.5</description>
+        <platform>all</platform>
+    </extension>
 </addon>
 
 <addon id="docker.josh5.unmanic"
@@ -121,18 +134,5 @@ docker.josh5.unmanic:
         <fanart>fanart.jpg</fanart>
     </assets>
   </extension>
-</addon>
-
-<addon id="repository.josh5" name="Josh.5" version="1.0.0" provider-name="Josh.5">
-    <extension point="xbmc.addon.repository" name="Josh.5">
-        <info compressed="false">https://raw.githubusercontent.com/Josh5/repository.josh5/master/repo/addons.xml</info>
-        <checksum>https://raw.githubusercontent.com/Josh5/repository.josh5/master/repo/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.githubusercontent.com/Josh5/repository.josh5/master/repo</datadir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <summary>Josh.5 add-on repository</summary>
-        <description>Download and install addons by Josh.5</description>
-        <platform>all</platform>
-    </extension>
 </addon>
 </addons>
