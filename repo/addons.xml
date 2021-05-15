@@ -5,18 +5,29 @@
        version="0.0.4"
        provider-name="Josh.5">
   <requires>
-    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="xbmc.python"
+            version="3.0.0"/>
   </requires>
   <extension point="xbmc.service"
-             library="service.py">
-  </extension>
+             library="service.py"/>
   <extension point="xbmc.python.script"
              library="default.py">
         <provides>executable</provides>
   </extension>
+  <extension point="kodi.context.item">
+    <menu id="kodi.core.main">
+      <item library="contextitem.py">
+        <label>33001</label>
+        <visible>String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,video) |
+          String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,episode) |
+          String.IsEqual(ListItem.dbtype,musicvideo)
+        </visible>
+      </item>
+    </menu>
+  </extension>
   <extension point="xbmc.addon.metadata">
-    <summary>Unmanic as an addon</summary>
-    <description>
+    <summary lang="en_GB">Unmanic as an addon</summary>
+    <description lang="en_GB">
 Unmanic is a simple tool for optimising your video library to a single format. The ultimate goal of Unmanic is to take the complexity out of converting your whole media library. The idea is to simply point Unmanic at your library and let it manage it.
 
 Unmanic provides you with the following main functions:
@@ -29,8 +40,12 @@ Unmanic provides you with the following main functions:
 
  - A Web UI to easily configure your preferred video presets and monitor the progress of your library conversion.
     </description>
-    <disclaimer>
-    </disclaimer>
+    <platform>linux</platform>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+    <forum>https://forum.kodi.tv/showthread.php?tid=359064</forum>
+    <website>https://unmanic.app</website>
+    <email>jsunnex@gmail.com</email>
+    <source>https://github.com/Unmanic/unmanic/</source>
     <news>
 service.unmanic:
 --------------------------
@@ -38,11 +53,78 @@ service.unmanic:
 View changelog on https://github.com/Unmanic/unmanic/
 
     </news>
-    <platform>linux</platform>
-    <website>https://github.com/Unmanic/unmanic/</website>
     <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>
+
+<addon id="script.module.py-cpuinfo"
+       name="py-cpuinfo"
+       version="8.0.0"
+       provider-name="Matthew Brennan Jones (matthew.brennan.jones@gmail.com)">
+  <requires>
+    <import addon="xbmc.python"
+            version="3.0.0"/>
+  </requires>
+  <extension point="xbmc.python.module"
+             library="lib"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Get CPU info with pure Python 2 & 3</summary>
+    <description lang="en_GB">Get CPU info with pure Python 2 & 3</description>
+    <license>MIT</license>
+    <platform>all</platform>
+    <website>https://pypi.org/project/py-cpuinfo/</website>
+	  <source>https://pypi.org/project/py-cpuinfo/</source>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon>
+
+<addon id="script.module.cached-property"
+       name="cached-property"
+       version="1.5.2"
+       provider-name="Daniel Greenfeld (pydanny@gmail.com)">
+  <requires>
+    <import addon="xbmc.python"
+            version="3.0.0"/>
+  </requires>
+  <extension point="xbmc.python.module"
+             library="lib"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">A decorator for caching properties in classes.</summary>
+    <description lang="en_GB">A decorator for caching properties in classes.</description>
+    <license>BSD</license>
+    <platform>all</platform>
+    <website>https://pypi.org/project/cached-property/</website>
+	  <source>https://pypi.org/project/cached-property/</source>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon>
+
+<addon id="script.module.tornado"
+       name="tornado"
+       version="6.0.2"
+       provider-name="Facebook (python-tornado@googlegroups.com)">
+  <requires>
+    <import addon="xbmc.python"
+            version="3.0.0"/>
+  </requires>
+  <extension point="xbmc.python.module"
+             library="lib"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed.</summary>
+    <description lang="en_GB">Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed.</description>
+    <license>Apache-2.0</license>
+    <platform>all</platform>
+    <website>https://pypi.org/project/tornado/</website>
+	  <source>https://pypi.org/project/tornado/</source>
+    <assets>
+      <icon>icon.png</icon>
     </assets>
   </extension>
 </addon>
@@ -76,6 +158,52 @@ MerferFS service for merging all mounts under /var/media/* into a single mountpo
       <icon>icon.png</icon>
       <fanart>fanart.png</fanart>
 
+    </assets>
+  </extension>
+</addon>
+
+<addon id="script.module.peewee"
+       name="peewee"
+       version="3.14.4"
+       provider-name="Charles Leifer (coleifer@gmail.com)">
+  <requires>
+    <import addon="xbmc.python"
+            version="3.0.0"/>
+  </requires>
+  <extension point="xbmc.python.module"
+             library="lib"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">a little orm</summary>
+    <description lang="en_GB">a little orm</description>
+    <license>MIT License</license>
+    <platform>all</platform>
+    <website>https://pypi.org/project/peewee/</website>
+	  <source>https://pypi.org/project/peewee/</source>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon>
+
+<addon id="script.module.mock"
+       name="mock"
+       version="4.0.3"
+       provider-name="Testing Cabal (testing-in-python@lists.idyll.org)">
+  <requires>
+    <import addon="xbmc.python"
+            version="3.0.0"/>
+  </requires>
+  <extension point="xbmc.python.module"
+             library="lib"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Rolling backport of unittest.mock for all Pythons</summary>
+    <description lang="en_GB">Rolling backport of unittest.mock for all Pythons</description>
+    <license>BSD</license>
+    <platform>all</platform>
+    <website>https://pypi.org/project/mock/</website>
+	  <source>https://pypi.org/project/mock/</source>
+    <assets>
+      <icon>icon.png</icon>
     </assets>
   </extension>
 </addon>
@@ -132,6 +260,79 @@ docker.josh5.unmanic:
     <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>
+
+<addon id="script.module.peewee-migrate"
+       name="peewee-migrate"
+       version="1.1.6"
+       provider-name="None (None)">
+  <requires>
+    <import addon="xbmc.python"
+            version="3.0.0"/>
+    <import addon="script.module.cached-property" version="1.5.2" />
+    <import addon="script.module.click" version="8.0.0" />
+    <import addon="script.module.mock" version="4.0.3" />
+    <import addon="script.module.peewee" version="3.14.4" />
+  </requires>
+  <extension point="xbmc.python.module"
+             library="lib"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Simple migration engine for Peewee</summary>
+    <description lang="en_GB">Simple migration engine for Peewee</description>
+    <license>MIT</license>
+    <platform>all</platform>
+    <website>https://pypi.org/project/peewee-migrate/</website>
+	  <source>https://pypi.org/project/peewee-migrate/</source>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon>
+
+<addon id="script.module.click"
+       name="click"
+       version="8.0.0"
+       provider-name="Armin Ronacher (armin.ronacher@active-4.com)">
+  <requires>
+    <import addon="xbmc.python"
+            version="3.0.0"/>
+  </requires>
+  <extension point="xbmc.python.module"
+             library="lib"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Composable command line interface toolkit</summary>
+    <description lang="en_GB">Composable command line interface toolkit</description>
+    <license>BSD-3-Clause</license>
+    <platform>all</platform>
+    <website>https://pypi.org/project/click/</website>
+	  <source>https://pypi.org/project/click/</source>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon>
+
+<addon id="script.module.schedule"
+       name="schedule"
+       version="0.6.0"
+       provider-name="Daniel Bader (mail@dbader.org)">
+  <requires>
+    <import addon="xbmc.python"
+            version="3.0.0"/>
+  </requires>
+  <extension point="xbmc.python.module"
+             library="lib"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Job scheduling for humans.</summary>
+    <description lang="en_GB">Job scheduling for humans.</description>
+    <license>MIT</license>
+    <platform>all</platform>
+    <website>https://pypi.org/project/schedule/</website>
+	  <source>https://pypi.org/project/schedule/</source>
+    <assets>
+      <icon>icon.png</icon>
     </assets>
   </extension>
 </addon>
